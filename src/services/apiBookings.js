@@ -20,11 +20,9 @@ export async function getBookings({ filter, sortBy, page }) {
     });
 
   if (page) {
-    console.log('page: ', page);
     const from = (page - 1) * PAGE_SIZE;
-    console.log('from: ', from);
+
     const to = from + PAGE_SIZE - 1;
-    console.log('to: ', to);
 
     query = query.range(from, to);
   }
